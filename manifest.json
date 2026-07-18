@@ -1,0 +1,6 @@
+{
+    "version": "1.0",
+    "name": "Google Reskin",
+    "description": "A simple browser extension.",
+    "manifest_version": 3
+}
