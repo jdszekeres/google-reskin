@@ -1,6 +1,41 @@
 {
     "version": "1.0",
-    "name": "Google Reskin",
-    "description": "A simple browser extension.",
-    "manifest_version": 3
+    "name": "Google like its 1989",
+    "description": "A chrome extension that makes Google look retro.",
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "64": "assets/icon64.png",
+        "128": "assets/icon128.png"
+    },
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": ["https://www.google.com/search*"],
+            "js": ["scripts/hide-ai-mode.js"]
+        },
+        {
+            "matches": ["https://www.google.com/search*"],
+            "js": ["scripts/hide-also-searched.js"]
+        },
+        {
+            "matches": ["https://www.google.com/search*"],
+            "js": ["scripts/load_retro_font.js"]
+        },
+        {
+            "matches": ["https://www.google.com/search*"],
+            "js": ["scripts/vhs-lines.js"]
+        },
+        {
+            "matches": ["https://www.google.com/search*"],
+            "css": ["styles/search-result.css"]
+        }
+        
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["assets/Ac437_IBM_BIOS-2y.ttf"],
+            "matches": ["https://www.google.com/*"]
+        }
+    ]
 }

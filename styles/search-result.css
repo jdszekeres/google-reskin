@@ -1,0 +1,109 @@
+/* Make the background black */
+body, header, #sfooter {
+    background-color: #000000 !important;
+}
+
+div[data-hveid] > div {
+    background-color: #000000 !important;
+}
+
+div[data-hveid] {
+    background-color: #000000 !important;
+}
+
+div:has(div[data-pubr][jscontroller] > div) {
+    background-color: #000000 !important;
+}
+
+
+/* Make the text retro */
+
+span, div, a, p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM BIOS' !important;
+}
+
+a, div[role="link"] {
+    color: #00ff00 !important;
+}
+
+/* Hide the little circle icons for each site*/
+div[aria-hidden="true"] > img[data-atf] {
+    display: none !important;
+}
+
+/* Hide the user reviews */
+span[aria-label*="user reviews"] {
+    display: none !important;
+}
+/* Hide the separator lines */
+hr {
+    display: none !important;
+}
+/* Hide the user apps icon */
+a[aria-label="Google apps"] {
+    display: none !important;
+}
+/* Hide the user icon */
+a[aria-label*="Google Account"] {
+    display: none !important;
+}
+/* Add a "Google" label to the header */
+header::before {
+    content: "Google" !important;
+    font-family: 'IBM BIOS' !important;
+}
+
+
+/* Hide image search refinements */
+a[aria-label^="Add"][role="link"] {
+    display: none !important;
+}
+
+/* add a border to buttons */
+[style*="-webkit-tap-highlight-color: transparent; user-select: none;"] {
+    border-radius: 0px !important;
+    background-color: #000000 !important;
+}
+[style*="-webkit-tap-highlight-color: transparent; user-select: none;"] > div[jscontroller] {
+    border-radius: 0px !important;
+    border-color: #00ff00 !important;
+    border-width: 2px !important;
+    border: 2px solid #00ff00 !important;
+    outline: 2px solid #00ff00 !important;
+}
+
+/* Hide google doodle */
+#mdlogo, #mlogo, .logo {
+    display: none !important;
+}
+
+
+/* VHS lines on images */
+[id*="vhs-image-"]::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+
+    /* Horizontal scanlines */
+    background: repeating-linear-gradient(
+        to bottom,
+         rgba(255,255,255,.03) 0px,
+        rgba(255,255,255,.03) 1px,
+        rgba(0,0,0,.08) 2px,
+        transparent 4px
+    ) !important;
+
+    mix-blend-mode: multiply !important;
+    opacity: 0.8 !important;
+    animation: vhs-scanlines 4s linear infinite !important;
+}
+
+@keyframes vhs-scanlines {
+from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(4px);
+    }
+}
