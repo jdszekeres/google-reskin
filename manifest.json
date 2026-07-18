@@ -32,13 +32,21 @@
         },
         {
             "matches": ["https://www.google.com/search*"],
-            "css": ["styles/search-result.css"]
+            "js": ["scripts/load-css.js"]
+        },
+        {
+            "matches": ["https://www.google.com/search*"],
+            "js": ["scripts/settings.js"]
         }
         
     ],
     "web_accessible_resources": [
         {
             "resources": ["assets/Ac437_IBM_BIOS-2y.ttf"],
+            "matches": ["https://www.google.com/*"]
+        },
+        {
+            "resources": ["styles/search-result.css"],
             "matches": ["https://www.google.com/*"]
         }
     ],
@@ -47,6 +55,8 @@
     },
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "storage",
+        "tabs"
     ]
 }

@@ -1,10 +1,15 @@
 function loadFont() {
-    var font = document.createElement('style');
-        font.type = 'text/css';
-        font.textContent = '@font-face { font-family: "IBM BIOS"; src: url("'
-            + browser.runtime.getURL('assets/Ac437_IBM_BIOS-2y.ttf')
-            + '"); }';
-    document.head.appendChild(font);
+    chrome.storage.local.get('isEnabled', (result) => {
+        console.log(result);
+        if (result.isEnabled) {
+            var font = document.createElement('style');
+                font.type = 'text/css';
+                font.textContent = '@font-face { font-family: "IBM BIOS"; src: url("'
+                    + browser.runtime.getURL('assets/Ac437_IBM_BIOS-2y.ttf')
+                    + '"); }';
+            document.head.appendChild(font);
+        }
+    })
 }
 
 loadFont();

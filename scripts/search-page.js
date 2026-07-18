@@ -1,3 +1,11 @@
+
+const suggestionsContainer = document.getElementById('suggestions-container');
+const searchButton = document.getElementById('searchButton');
+const enabledCheckbox = document.getElementById('enable');
+const searchInput = document.getElementById('searchInput');
+
+
+
 const url = "https://www.google.com/complete/s?q={query}&cp=1&client=gws-wiz&xssi=t&gs_pcrt=undefined&hl=en&authuser=0&psi=OdhbatHKMKXnkPIP0Ni5yQo.1784404026462&dpr=2.0000000596046448&pq=google%20text%20suggestions%20api";
 
 let searchIndex = -1;
@@ -18,9 +26,8 @@ function getSearchSuggestions(query) {
         });
 }
 
-const suggestionsContainer = document.getElementById('suggestions-container');
 
-const searchButton = document.getElementById('searchButton');
+
 searchButton.addEventListener('click', () => {
     const query = searchInput.value;
     if (query.length > 0) {
@@ -58,7 +65,6 @@ function clearSuggestions() {
 
 clearSuggestions(); // Clear suggestions on page load
 
-const searchInput = document.getElementById('searchInput');
 searchInput.addEventListener('input', async (event) => {
     const query = event.target.value;
     if (query.length > 0) {
@@ -85,6 +91,9 @@ searchInput.addEventListener('keydown', (event) => {
         } else {
             searchButton.click(); // Trigger the search button click if no suggestion is selected
         }
+    } else if (event.key === 'Tab') {
+        event.preventDefault();
+        enabledCheckbox.focus(); // Move focus to the enable checkbox
     }
 
     // Update the visual highlight for the selected suggestion
@@ -99,6 +108,24 @@ searchInput.addEventListener('keydown', (event) => {
 
     });
 })
+
+enabledCheckbox.addEventListener('change', (event) => {
+    const isEnabled = event.target.checked;
+    chrome.storage.local.set({ isEnabled: isEnabled }, () => {
+        console.log(`Extension is now ${isEnabled ? 'enabled' : 'disabled'}.`);
+    })
+});
+
+enabledCheckbox.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        enabledCheckbox.click(); // Toggle the checkbox on Enter key press
+    } else if (event.key === 'Tab') {
+        event.preventDefault();
+        searchInput.focus(); // Move focus back to the search input
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');

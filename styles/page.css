@@ -67,7 +67,7 @@ h1 {
     width: calc(300px + 100px + 10px); /* Width of input + width of button + gap */
 }
 
-input {
+input[type="text"] {
     border-radius: 0px;
     background: transparent;
     border: 2px solid #00ff00;
@@ -78,16 +78,16 @@ input {
     padding: 5px;
 
     caret-shape: block;
-    
+
 }
 
-input:focus {
+input[type="text"]:focus {
     outline: none;
     border: 2px solid #00ff00;
     box-shadow: none;
 }
 
-input::placeholder {
+input[type="text"]::placeholder {
     color: #00ff00;
 }
 
@@ -100,5 +100,54 @@ button {
 
     width: 100px;
     padding: 5px;
+}
+
+#settings-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #000;
+    margin: 0;
+    font: inherit;
+    color: #00ff00;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #00ff00;
+    border-radius: 0px;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1.15em 1.15em #00ff00;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid #00ff00;
+  outline-offset: max(2px, 0.15em);
+}
+
+label {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
 }
 

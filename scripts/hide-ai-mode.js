@@ -10,12 +10,15 @@ const elementsToHide = [
 ];
 
 function hideElements() {
-    elementsToHide.forEach(selector => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(element => {
-            element.style.display = 'none';
-        });
-    });
+    chrome.storage.local.get('isEnabled', (result) => {
+        if (result.isEnabled) {
+            elementsToHide.forEach(selector => {
+                const elements = document.querySelectorAll(selector);
+                elements.forEach(element => {
+                    element.style.display = 'none';
+                });
+            });
+    }})
 }
 
 hideElements();
