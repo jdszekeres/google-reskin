@@ -18,7 +18,7 @@ div:has(div[data-pubr][jscontroller] > div) {
 
 /* Make the text retro */
 
-span, div, a, p, h1, h2, h3, h4, h5, h6 {
+span, div, a, p, h1, h2, h3, h4, h5, h6 , b {
     font-family: 'IBM BIOS' !important;
 }
 
@@ -43,11 +43,7 @@ a[aria-label="Google apps"] {
 a[aria-label*="Google Account"] {
     display: none !important;
 }
-/* Add a "Google" label to the header */
-header::after {
-    content: "Google" !important;
-    font-family: 'IBM BIOS' !important;
-}
+
 
 g-inner-card > div, g-inner-card {
     border-radius: 0px !important;
@@ -74,7 +70,7 @@ a[aria-label^="Add"][role="link"] {
 }
 
 /* Hide google doodle */
-#mdlogo, #mlogo, .logo {
+#mdlogo, #mlogo, .logo, [data-doodle] {
     display: none !important;
 }
 
@@ -108,3 +104,18 @@ from {
         transform: translateY(4px);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
