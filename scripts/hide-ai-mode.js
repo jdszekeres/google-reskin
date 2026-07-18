@@ -5,11 +5,11 @@ const elementsToHide = [
     'button.plR5qb',
     'button[jsname="B6rgad"]',
     '[data-streaming-container]',
-    '[data-mcpr]'
+    '[data-mcpr]',
+    'div[data-local-shopping-subvertical="LOCAL_SHOPPING_SUBVERTICAL_GENERIC"]'
 ];
 
 function hideElements() {
-    console.log('Hiding elements...');
     elementsToHide.forEach(selector => {
         const elements = document.querySelectorAll(selector);
         elements.forEach(element => {

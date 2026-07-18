@@ -7,7 +7,7 @@ div[data-hveid] > div {
     background-color: #000000 !important;
 }
 
-div[data-hveid] {
+div[data-hveid]:not([jsaction]) {
     background-color: #000000 !important;
 }
 
@@ -26,15 +26,6 @@ a, div[role="link"] {
     color: #00ff00 !important;
 }
 
-/* Hide the little circle icons for each site*/
-div[aria-hidden="true"] > img[data-atf] {
-    display: none !important;
-}
-
-/* Hide the user reviews */
-span[aria-label*="user reviews"] {
-    display: none !important;
-}
 /* Hide the separator lines */
 hr {
     display: none !important;
@@ -43,14 +34,24 @@ hr {
 a[aria-label="Google apps"] {
     display: none !important;
 }
+
+/* Hide the share button */
+[aria-label="Share"] {
+    display: none !important;
+}
 /* Hide the user icon */
 a[aria-label*="Google Account"] {
     display: none !important;
 }
 /* Add a "Google" label to the header */
-header::before {
+header::after {
     content: "Google" !important;
     font-family: 'IBM BIOS' !important;
+}
+
+g-inner-card > div, g-inner-card {
+    border-radius: 0px !important;
+    background-color: #000000 !important;
 }
 
 

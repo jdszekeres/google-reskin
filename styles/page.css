@@ -76,6 +76,9 @@ input {
 
     width: 300px;
     padding: 5px;
+
+    caret-shape: block;
+    
 }
 
 input:focus {
@@ -98,3 +101,4 @@ button {
     width: 100px;
     padding: 5px;
 }
+
