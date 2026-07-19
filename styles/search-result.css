@@ -15,6 +15,10 @@ div:has(div[data-pubr][jscontroller] > div) {
     background-color: #000000 !important;
 }
 
+a[data-attrid="VisualDigestVideoResult"] div {
+    background-color: #000000 !important;
+}
+
 /* form[role="search"]  div[jsmodel], form[role="search"] div[data-ved], div:has(div[role="presentation"]) {
     background-color: #000000 !important;
 } */
@@ -70,7 +74,9 @@ span#searchInput:focus {
     outline: none !important;
 }
 
-
+span {
+    color: #00ff00 !important;
+}
 
 
 g-inner-card > div, g-inner-card {
@@ -102,9 +108,23 @@ a[aria-label^="Add"][role="link"] {
     display: none !important;
 }
 
+img[data-atf] {
+    position: relative !important;
+    z-index: 100 !important;
+}
 
+[id*="vhs-image-"] > img {
+    position: relative !important;
+    z-index: 100 !important;
+}
+img[alt="Play"] {
+    position: relative !important;
+    z-index: 101 !important;
+
+}
 /* VHS lines on images */
 [id*="vhs-image-"]::after {
+    z-index: 102 !important;
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
