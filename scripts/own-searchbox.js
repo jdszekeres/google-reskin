@@ -11,8 +11,9 @@ function createSearchBox() {
     searchBox.style.alignItems = 'center';
     searchBox.style.justifyContent = 'center';
     searchBox.style.marginTop = '10px';
-    searchBox.style.width = '100%';
+    searchBox.style.width = 'calc(100vw - 20px)';
     searchBox.style.caretShape = 'block';
+    searchBox.style.padding = '10px';
 
 
     const input = document.createElement('span');

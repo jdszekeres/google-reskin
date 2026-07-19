@@ -144,6 +144,10 @@ img[alt="Play"] {
     animation: vhs-scanlines 4s linear infinite !important;
 }
 
+span:has(#searchform) {
+    display: none !important;
+}
+
 @keyframes vhs-scanlines {
 from {
         transform: translateY(0);
