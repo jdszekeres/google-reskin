@@ -15,6 +15,12 @@ div:has(div[data-pubr][jscontroller] > div) {
     background-color: #000000 !important;
 }
 
+/* form[role="search"]  div[jsmodel], form[role="search"] div[data-ved], div:has(div[role="presentation"]) {
+    background-color: #000000 !important;
+} */
+[data-blu] {
+    display: none !important;
+}
 
 /* Make the text retro */
 
@@ -43,6 +49,28 @@ a[aria-label="Google apps"] {
 a[aria-label*="Google Account"] {
     display: none !important;
 }
+/* Hide the search by image button */
+div[aria-label="Search by image"] {
+    display: none !important;
+}
+/* Hide the search by voice button */
+div:has(svg[aria-label="Search by voice"]) {
+    display: none !important;
+}
+
+textarea[aria-label="Google Search"] {
+    color: #00ff00 !important;
+}
+
+:has(textarea[aria-label="Google Search"]) div {
+    color: #00ff00 !important;
+}
+
+span#searchInput:focus {
+    outline: none !important;
+}
+
+
 
 
 g-inner-card > div, g-inner-card {
@@ -104,18 +132,3 @@ from {
         transform: translateY(4px);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,9 +2,11 @@
 ## Google like it's 1989 with this chrome extension that reskins the google search page
 
 
-| Results Page | Search Page |
-| :--- | :--- |
-| ![Screenshot of reskinned search result page](screenshots/hc.png) | ![Screenshot of search page](screenshots/search.png) |
+
+<div style="display: flex; flex-direction: row; justify-content: space-between">
+    <img src="screenshots/hc.png" style="width: 45%" />
+    <img src="screenshots/search.png" style="width: 45%" />
+</div>
 
 ### Installation
 
@@ -19,7 +21,23 @@
 - The Google search results page will automatically update to look retro
 - You can use a retro version of the Google homepage by pressing the extension icon
 
+### Features
+To make Googling feel retro, on results pages this extension:
+- Removes AI Mode
+- Removes related search sugggestions
+- Applies a Teletype font to everything
+- Changes the background to black
+- Removes complex buttons, like Google Apps or Profile
+- Converts buttons to rectangles
+- Simplifies the menu bar
+
+The retro search page has the following features:
+- Keyboard-navigatable searching
+- Search suggestions
+- Toggleable retro mode on results pages
+
 ### Permissions
 Google like its 1989 uses the following permissions:
 - ActiveTab: To control the content on the current tab to look retro
 - Scripting: To launch the retro google search page
+- Storage: Track whether Retro Mode is on or off

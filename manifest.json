@@ -37,6 +37,10 @@
         {
             "matches": ["https://www.google.com/search*"],
             "js": ["scripts/settings.js"]
+        },
+        {
+            "matches": ["https://www.google.com/search*"],
+            "js": ["scripts/own-searchbox.js"]
         }
         
     ],
@@ -56,7 +60,6 @@
     "permissions": [
         "activeTab",
         "scripting",
-        "storage",
-        "tabs"
+        "storage"
     ]
 }

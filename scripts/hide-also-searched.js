@@ -12,6 +12,13 @@ function hideElements() {
                     }
                 }
             })
+
+            // Hide search gradient as well
+            document.querySelectorAll('form[role="search"] div[jsname]').forEach(div => {
+                if (div.style.background && div.style.background.includes('linear-gradient')) {
+                    div.style.backgroundImage = 'none';
+                }
+            })
     }
 })
 }

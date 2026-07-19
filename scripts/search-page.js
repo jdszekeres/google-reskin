@@ -10,8 +10,6 @@ const url = "https://www.google.com/complete/s?q={query}&cp=1&client=gws-wiz&xss
 
 let searchIndex = -1;
 
-
-
 function getSearchSuggestions(query) {
     const requestUrl = url.replace("{query}", encodeURIComponent(query));
     return fetch(requestUrl)
@@ -130,4 +128,8 @@ enabledCheckbox.addEventListener('keydown', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     searchInput.focus();
+
+    chrome.storage.local.get('isEnabled', (result) => {
+        enabledCheckbox.checked = result.isEnabled === true;
+    });
 });

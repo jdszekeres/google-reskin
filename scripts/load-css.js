@@ -7,7 +7,10 @@ function loadCSS() {
             link.rel = 'stylesheet';
             link.href = browser.runtime.getURL('styles/search-result.css');
             document.head.appendChild(link);
+
         }
+
+
     })
 }
 

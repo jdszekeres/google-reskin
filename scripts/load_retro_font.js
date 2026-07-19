@@ -1,6 +1,5 @@
 function loadFont() {
     chrome.storage.local.get('isEnabled', (result) => {
-        console.log(result);
         if (result.isEnabled) {
             var font = document.createElement('style');
                 font.type = 'text/css';
