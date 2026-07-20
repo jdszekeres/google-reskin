@@ -158,18 +158,18 @@ input[type="checkbox"]:focus {
     gap: 0.5em;
 }
 
+.color-button {
+    outline-color: var(--button-color) !important;
+    color: var(--button-color) !important;
+    border-color: var(--button-color) !important;
+}
+
 #green-button {
-    outline-color: #00ff00;
-    color: #00ff00;
-    border-color: #00ff00;
+    --button-color: #00ff00;
 }
 #blue-button {
-    outline-color: #0080ff;
-    color: #0080ff;
-    border-color: #0080ff;
+    --button-color: #0080ff;
 }
 #grey-button {
-    outline-color: #aaaaaa;
-    color: #aaaaaa;
-    border-color: #aaaaaa;
+    --button-color: #aaaaaa;
 }
