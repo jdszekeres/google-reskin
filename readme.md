@@ -23,11 +23,11 @@
 
 #### Screenshots
 <div style="display: flex; flex-wrap: wrap; flex-direction: row;">
-    <img src="screenshots/color.png"    style="width:300px; padding: 5px"/>
-    <img src="screenshots/hc.png"       style="width:300px; padding: 5px"/>
-    <img src="screenshots/images.png"   style="width:300px; padding: 5px"/>
-    <img src="screenshots/search.png"   style="width:300px; padding: 5px"/>
-    <img src="screenshots/shopping.png" style="width:300px; padding: 5px"/>
+    <img src="screenshots/color.png"    style="width:150px; padding: 5px"/>
+    <img src="screenshots/hc.png"       style="width:150px; padding: 5px"/>
+    <img src="screenshots/images.png"   style="width:150px; padding: 5px"/>
+    <img src="screenshots/search.png"   style="width:150px; padding: 5px"/>
+    <img src="screenshots/shopping.png" style="width:150px; padding: 5px"/>
 </div>
 
 ### Features
@@ -50,3 +50,5 @@ Google like its 1979 uses the following permissions:
 - ActiveTab: To control the content on the current tab to look retro
 - Scripting: To launch the retro google search page
 - Storage: Track whether Retro Mode is on or off
+
+fdfodfk
