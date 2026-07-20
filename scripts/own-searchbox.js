@@ -24,7 +24,7 @@ function createSearchBox() {
     input.style.padding = '10px 0px 10px 10px';
     input.style.fontSize = '16px';
     input.style.borderRadius = '0px';
-    input.style.border = '1px solid #0f0';
+    input.style.border = '1px solid var(--retro-theme-color)';
     input.style.width = '50vw';
 
     input.textContent = getSearchQueryFromURL() || '';
@@ -38,8 +38,8 @@ function createSearchBox() {
     button.style.borderRadius = '0px';
     button.style.border = 'none';
     button.style.backgroundColor = 'transparent';
-    button.style.border = '1px solid #0f0';
-    button.style.color = '#0f0';
+    button.style.border = '1px solid var(--retro-theme-color)';
+    button.style.color = 'var(--retro-theme-color)';
     button.style.cursor = 'pointer';
 
     input.addEventListener('keydown', (event) => {

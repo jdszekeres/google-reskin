@@ -33,7 +33,7 @@ span, div, a, p, h1, h2, h3, h4, h5, h6 , b {
 }
 
 a, div[role="link"] {
-    color: #00ff00 !important;
+    color: var(--retro-theme-color) !important;
 }
 
 /* Hide the separator lines */
@@ -63,11 +63,11 @@ div:has(svg[aria-label="Search by voice"]) {
 }
 
 textarea[aria-label="Google Search"] {
-    color: #00ff00 !important;
+    color: var(--retro-theme-color) !important;
 }
 
 :has(textarea[aria-label="Google Search"]) div {
-    color: #00ff00 !important;
+    color: var(--retro-theme-color) !important;
 }
 
 span#searchInput:focus {
@@ -75,7 +75,7 @@ span#searchInput:focus {
 }
 
 span {
-    color: #00ff00 !important;
+    color: var(--retro-theme-color) !important;
 }
 
 
@@ -95,12 +95,13 @@ a[aria-label^="Add"][role="link"] {
     border-radius: 0px !important;
     background-color: #000000 !important;
 }
+
 [style*="-webkit-tap-highlight-color: transparent; user-select: none;"] > div[jscontroller] {
     border-radius: 0px !important;
-    border-color: #00ff00 !important;
+    border-color: var(--retro-theme-color) !important;
     border-width: 2px !important;
-    border: 2px solid #00ff00 !important;
-    outline: 2px solid #00ff00 !important;
+    border: 2px solid var(--retro-theme-color) !important;
+    outline: 2px solid var(--retro-theme-color) !important;
 }
 
 /* Hide google doodle */

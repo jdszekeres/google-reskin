@@ -4,11 +4,17 @@ const searchButton = document.getElementById('searchButton');
 const enabledCheckbox = document.getElementById('enable');
 const searchInput = document.getElementById('searchInput');
 
+const greenButton = document.getElementById('green-button');
+const blueButton = document.getElementById('blue-button');
+const greyButton = document.getElementById('grey-button');
+
 
 
 const url = "https://www.google.com/complete/s?q={query}&cp=1&client=gws-wiz&xssi=t&gs_pcrt=undefined&hl=en&authuser=0&psi=OdhbatHKMKXnkPIP0Ni5yQo.1784404026462&dpr=2.0000000596046448&pq=google%20text%20suggestions%20api";
 
 let searchIndex = -1;
+
+
 
 function getSearchSuggestions(query) {
     const requestUrl = url.replace("{query}", encodeURIComponent(query));
@@ -120,16 +126,85 @@ enabledCheckbox.addEventListener('keydown', (event) => {
         enabledCheckbox.click(); // Toggle the checkbox on Enter key press
     } else if (event.key === 'Tab') {
         event.preventDefault();
-        searchInput.focus(); // Move focus back to the search input
+        greenButton.focus(); // Move focus back to the search input
     }
 });
 
 
+function setColorCSS(newColor) {
+    console.log('Setting color CSS to:', newColor);
+    const styleElement = document.getElementById('theme-color-style');
+    if (styleElement) {
+        styleElement.remove();
+    }
+    const newStyleElement = document.createElement('style');
+    newStyleElement.id = 'theme-color-style';
+    newStyleElement.textContent = `
+        :root {
+            --retro-theme-color: ${newColor};
+        }
+    `;
+    document.head.appendChild(newStyleElement);
+}
+
+function registerColorButtonHandlers(button,hex, nextButton) {
+    button.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            button.click(); // Trigger the click event on Enter key press
+        }
+        else if (event.key === 'Tab') {
+            event.preventDefault();
+            nextButton.focus(); // Move focus to the next button
+        }
+    });
+    button.addEventListener("click", () => {
+        chrome.storage.local.set({ themeColor: hex }, () => {
+            console.log(`Theme color set to ${hex}.`);
+            updateSelectedColor(button);
+            setColorCSS(hex);
+        });
+    });
+}
+
+
+registerColorButtonHandlers(greenButton, '#00ff00', blueButton);
+registerColorButtonHandlers(blueButton, '#0080ff', greyButton);
+registerColorButtonHandlers(greyButton, '#aaaaaa', searchInput);
+
+
+function updateSelectedColor(selectedButton) {
+    [greenButton, blueButton, greyButton].forEach(button => {
+        if (button === selectedButton) {
+            button.checked = true;
+        } else {
+            button.checked = false;
+        }
+    });
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    setColorCSS('#00ff00'); // Set default color on page load
     const searchInput = document.getElementById('searchInput');
     searchInput.focus();
 
     chrome.storage.local.get('isEnabled', (result) => {
         enabledCheckbox.checked = result.isEnabled === true;
+    });
+
+    chrome.storage.local.get('themeColor', (result) => {
+        console.log('Theme color from storage:', result.themeColor);
+        const themeColor = result.themeColor || '#00ff00';
+        if (themeColor === '#00ff00') {
+            greenButton.checked = true;
+        } else if (themeColor === '#0080ff') {
+            blueButton.checked = true;
+        } else if (themeColor === '#aaaaaa') {
+            greyButton.checked = true;
+        }
+
+        setColorCSS(themeColor);
+        
     });
 });

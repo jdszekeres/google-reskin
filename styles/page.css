@@ -12,7 +12,7 @@ html, body {
 
 body {
     background-color: black;
-    color: #00ff00;
+    color: var(--retro-theme-color);
     font-family: 'IBM BIOS', monospace;
 
 }
@@ -70,8 +70,8 @@ h1 {
 input[type="text"] {
     border-radius: 0px;
     background: transparent;
-    border: 2px solid #00ff00;
-    color: #00ff00;
+    border: 2px solid var(--retro-theme-color);
+    color: var(--retro-theme-color);
     font-family: 'IBM BIOS', monospace;
 
     width: 300px;
@@ -83,19 +83,19 @@ input[type="text"] {
 
 input[type="text"]:focus {
     outline: none;
-    border: 2px solid #00ff00;
+    border: 2px solid var(--retro-theme-color);
     box-shadow: none;
 }
 
 input[type="text"]::placeholder {
-    color: #00ff00;
+    color: var(--retro-theme-color);
 }
 
 button {
     border-radius: 0px;
     background: transparent;
-    border: 2px solid #00ff00;
-    color: #00ff00;
+    border: 2px solid var(--retro-theme-color);
+    color: var(--retro-theme-color);
     font-family: 'IBM BIOS', monospace;
 
     width: 100px;
@@ -105,10 +105,11 @@ button {
 #settings-container {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     gap: 10px;
     padding: 10px;
+    width: calc(300px + 100px + 10px); /* Width of input + width of button + gap */
 }
 
 input[type="checkbox"] {
@@ -116,10 +117,10 @@ input[type="checkbox"] {
     background-color: #000;
     margin: 0;
     font: inherit;
-    color: #00ff00;
+    color: var(--retro-theme-color);
     width: 1.15em;
     height: 1.15em;
-    border: 0.15em solid #00ff00;
+    border: 0.15em solid var(--retro-theme-color);
     border-radius: 0px;
     transform: translateY(-0.075em);
 
@@ -133,7 +134,7 @@ input[type="checkbox"]::before {
   height: 0.65em;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1.15em 1.15em #00ff00;
+  box-shadow: inset 1.15em 1.15em var(--retro-theme-color);
 }
 
 input[type="checkbox"]:checked::before {
@@ -141,13 +142,34 @@ input[type="checkbox"]:checked::before {
 }
 
 input[type="checkbox"]:focus {
-  outline: max(2px, 0.15em) solid #00ff00;
+  outline: max(2px, 0.15em) solid var(--retro-theme-color);
   outline-offset: max(2px, 0.15em);
 }
 
-label {
+#enable-label {
   display: grid;
   grid-template-columns: 1em auto;
   gap: 0.5em;
 }
 
+#color-label {
+    display: grid;
+    grid-template-columns: 2.25em repeat(3, 1em) auto;
+    gap: 0.5em;
+}
+
+#green-button {
+    outline-color: #00ff00;
+    color: #00ff00;
+    border-color: #00ff00;
+}
+#blue-button {
+    outline-color: #0080ff;
+    color: #0080ff;
+    border-color: #0080ff;
+}
+#grey-button {
+    outline-color: #aaaaaa;
+    color: #aaaaaa;
+    border-color: #aaaaaa;
+}
